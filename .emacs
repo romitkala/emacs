@@ -4,7 +4,11 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
+
+(global-set-key (kbd "M-o d") "require 'ruby-debug'; debugger")
+
 (setq make-backup-files nil)
+
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/elpa")
@@ -110,3 +114,17 @@
 
 ;; System clipboard
 (setq x-select-enable-clipboard t)
+
+;; mode-compile
+(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/mode-compile")))
+(require 'mode-compile)
+(autoload 'mode-compile "mode-compile"
+  "Command to compile current buffer file based on the major mode" t)
+(global-set-key "\C-cc" 'mode-compile)
+(autoload 'mode-compile-kill "mode-compile"
+  "Command to kill a compilation launched by `mode-compile'" t)
+(global-set-key "\C-ck" 'mode-compile-kill)
+
+;; rspec-mode
+(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/rspec-mode")))
+(require 'rspec-mode)
