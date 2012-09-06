@@ -1,11 +1,24 @@
-;; Window movement keys: provides quick jumping between many open windows
+(defvar real-keyboard-keys
+  '(("M-<up>"        . "\M-[1;9A")
+    ("M-<down>"      . "\M-[1;9B")
+    ("M-<right>"     . "\M-[1;9C")
+    ("M-<left>"      . "\M-[1;9D"))
+  "An assoc list of pretty key strings
+and their terminal equivalents.")
 
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>")    'windmove-up)
-(global-set-key (kbd "C-c <down>")  'windmove-down)
+(defun key (desc)
+  (or (and window-system (read-kbd-macro desc))
+      (or (cdr (assoc desc real-keyboard-keys))
+          (read-kbd-macro desc))))
+
+;; Window movement keys: provides quick jumping between many open windows
+(global-set-key (key "M-<left>") 'windmove-left)          ; move to left windnow
+(global-set-key (key "M-<right>") 'windmove-right)        ; move to right window
+(global-set-key (key "M-<up>") 'windmove-up)              ; move to upper window
+(global-set-key (key "M-<down>") 'windmove-down)          ; move to downer window
 
 (global-set-key (kbd "M-o d") "require 'ruby-debug'; debugger")
+(global-set-key (kbd "M-s") 'rgrep)
 
 (setq make-backup-files nil)
 
@@ -17,6 +30,14 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 (setq size-indication-mode t)
+
+;; Whitespaces instead of tabs
+(setq-default indent-tabs-mode nil)
+
+;; line number mode
+(global-linum-mode t)
+
+;; highlight paranthesis mode
 
 ;; nice scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
@@ -69,7 +90,6 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; Tabs and spacing
-
 (setq js-indent-level 2)
 
 (custom-set-variables
@@ -107,8 +127,8 @@
 
 ; Mouse Wheel Scrolling
 ; Scroll up five lines without modifiers
-(defun up-slightly () (interactive) (scroll-up 5))
-(defun down-slightly () (interactive) (scroll-down 5))
+(defun up-slightly () (interactive) (scroll-up 3))
+(defun down-slightly () (interactive) (scroll-down 3))
 (global-set-key [mouse-4] 'down-slightly)
 (global-set-key [mouse-5] 'up-slightly)
 
@@ -128,3 +148,14 @@
 ;; rspec-mode
 (add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/rspec-mode")))
 (require 'rspec-mode)
+
+;; etags-select
+(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/etags-select")))
+(require 'etags-select)
+
+(setq tags-case-fold-search nil)
+
+;; (require 'whitespace)
+;; (setq whitespace-style (quote
+;;    ( face spaces tabs newline space-mark tab-mark)))
+;; (global-whitespace-mode t)
