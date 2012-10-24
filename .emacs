@@ -17,14 +17,19 @@ and their terminal equivalents.")
 (global-set-key (key "M-<up>") 'windmove-up)              ; move to upper window
 (global-set-key (key "M-<down>") 'windmove-down)          ; move to downer window
 
+;; my shortcuts
 (global-set-key (kbd "M-o d") "require 'ruby-debug'; debugger")
 (global-set-key (kbd "M-s") 'rgrep)
-
+(setq kill-whole-line t) ; make kill-line include the ending newline char
+(global-set-key (kbd "M-9") 'kill-whole-line)
 (setq make-backup-files nil)
-
+(show-paren-mode 1)
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/elpa")
+
+;; trailing white spaces
+(setq-default show-trailing-whitespace t)
 
 ;; mode line settings
 (setq line-number-mode t)
@@ -37,7 +42,7 @@ and their terminal equivalents.")
 ;; line number mode
 (global-linum-mode t)
 
-;; highlight paranthesis mode
+;; highlight parentheses mode
 
 ;; nice scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
@@ -154,8 +159,3 @@ and their terminal equivalents.")
 (require 'etags-select)
 
 (setq tags-case-fold-search nil)
-
-;; (require 'whitespace)
-;; (setq whitespace-style (quote
-;;    ( face spaces tabs newline space-mark tab-mark)))
-;; (global-whitespace-mode t)
