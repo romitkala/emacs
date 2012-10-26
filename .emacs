@@ -26,7 +26,13 @@ and their terminal equivalents.")
 (show-paren-mode 1)
 
 (add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/elpa")
+
+;; load vendor libs
+(let ((default-directory "~/.emacs.d/vendor/"))
+      (normal-top-level-add-to-load-path '("."))
+      (normal-top-level-add-subdirs-to-load-path))
 
 ;; trailing white spaces
 (setq-default show-trailing-whitespace t)
@@ -59,7 +65,6 @@ and their terminal equivalents.")
 (put 'upcase-region 'disabled nil)
 
 ;; load auto complete
-(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/auto-complete-1.3.1")))
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
@@ -90,7 +95,6 @@ and their terminal equivalents.")
 ;;  :   Go to step-definition under point
 ;;  :   (requires ruby_parser gem >= 2.0.5)
 
-(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/cucmber-feature-mode")))
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
@@ -127,7 +131,7 @@ and their terminal equivalents.")
 ;; Mouse configuration
 (require 'mouse)
 (xterm-mouse-mode t)
-(defun track-mouse (e)) 
+(defun track-mouse (e))
 (setq mouse-sel-mode t)
 
 ; Mouse Wheel Scrolling
@@ -141,7 +145,6 @@ and their terminal equivalents.")
 (setq x-select-enable-clipboard t)
 
 ;; mode-compile
-(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/mode-compile")))
 (require 'mode-compile)
 (autoload 'mode-compile "mode-compile"
   "Command to compile current buffer file based on the major mode" t)
@@ -151,11 +154,31 @@ and their terminal equivalents.")
 (global-set-key "\C-ck" 'mode-compile-kill)
 
 ;; rspec-mode
-(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/rspec-mode")))
 (require 'rspec-mode)
 
 ;; etags-select
-(add-to-list 'load-path (file-name-as-directory(expand-file-name "~/.emacs.d/plugins/etags-select")))
 (require 'etags-select)
+
+;; haml-mode
+(require 'haml-mode)
+
+;; yaml-mode
+(require 'yaml-mode)
+
+;; json-mode
+(require 'json-mode)
+
+;; ruby-mode
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("irbrc$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("gemspec$" . ruby-mode))
+
+;; bundler
+(require 'bundler)
+
+;; magit
+(require 'magit)
 
 (setq tags-case-fold-search nil)

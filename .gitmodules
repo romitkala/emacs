@@ -1,0 +1,48 @@
+[submodule ".emacs.d/vendor/auto-complete"]
+	path = .emacs.d/vendor/auto-complete
+	url = git://github.com/auto-complete/auto-complete.git
+[submodule ".emacs.d/vendor/cucumber-mode"]
+	path = .emacs.d/vendor/cucumber-mode
+	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule ".emacs.d/vendor/el-expectations"]
+	path = .emacs.d/vendor/el-expectations
+	url = git://github.com/emacsmirror/el-expectations.git
+[submodule ".emacs.d/vendor/etags-select"]
+	path = .emacs.d/vendor/etags-select
+	url = git://github.com/emacsmirror/etags-select.git
+[submodule ".emacs.d/vendor/mode-compile"]
+	path = .emacs.d/vendor/mode-compile
+	url = git://github.com/emacsmirror/mode-compile.git
+[submodule ".emacs.d/vendor/rspec-mode"]
+	path = .emacs.d/vendor/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
+[submodule ".emacs.d/vendor/haml-mode"]
+	path = .emacs.d/vendor/haml-mode
+	url = https://github.com/nex3/haml-mode.git
+[submodule ".emacs.d/vendor/highlight-parentheses"]
+	path = .emacs.d/vendor/highlight-parentheses
+	url = https://github.com/emacsmirror/highlight-parentheses.git
+[submodule ".emacs.d/vendor/json-mode"]
+	path = .emacs.d/vendor/json-mode
+	url = https://github.com/joshwnj/json-mode.git
+[submodule ".emacs.d/vendor/rinari"]
+	path = .emacs.d/vendor/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule ".emacs.d/vendor/textmate"]
+	path = .emacs.d/vendor/textmate
+	url = https://github.com/defunkt/textmate.el.git
+[submodule ".emacs.d/vendor/yaml-mode"]
+	path = .emacs.d/vendor/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule ".emacs.d/vendor/sass-mode"]
+	path = .emacs.d/vendor/sass-mode
+	url = https://github.com/nex3/sass-mode.git
+[submodule ".emacs.d/vendor/full-ack"]
+	path = .emacs.d/vendor/full-ack
+	url = https://github.com/nschum/full-ack.git
+[submodule ".emacs.d/vendor/bundler"]
+	path = .emacs.d/vendor/bundler
+	url = https://github.com/tobiassvn/bundler.el.git
+[submodule ".emacs.d/vendor/magit"]
+	path = .emacs.d/vendor/magit
+	url = git://github.com/magit/magit.git
