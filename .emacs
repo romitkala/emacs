@@ -48,6 +48,10 @@ and their terminal equivalents.")
 ;; line number mode
 (global-linum-mode t)
 
+;; line number off for certain major modes(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode)
+;; thanks to git://github.com/emacsmirror/linum-off.git
+(require 'linum-off)
+
 ;; highlight parentheses mode
 
 ;; nice scrolling
@@ -63,6 +67,8 @@ and their terminal equivalents.")
 (setq uniquify-after-kill-buffers-p t) ;; Rename uniquified buffers when one is killed
 (setq uniquify-ignore-buffers-re "^\\*") ;; Ignore special buffers
 (put 'upcase-region 'disabled nil)
+
+(setq tags-case-fold-search nil)
 
 ;; load auto complete
 (require 'auto-complete)
@@ -181,4 +187,18 @@ and their terminal equivalents.")
 ;; magit
 (require 'magit)
 
-(setq tags-case-fold-search nil)
+;; ruby-block
+(require 'ruby-block)
+(ruby-block-mode t)
+;; do overlay
+(setq ruby-block-highlight-toggle 'overlay)
+;; display to minibuffer
+(setq ruby-block-highlight-toggle 'minibuffer)
+;; display to minibuffer and do overlay
+(setq ruby-block-highlight-toggle t)
+
+;; full-ack
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
