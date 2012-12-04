@@ -216,3 +216,8 @@ and their terminal equivalents.")
 ;; "y or n" instead of "yes or no"
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; window re-size management
+(global-set-key (kbd "M-1") 'shrink-window)
+(global-set-key (kbd "M-2") 'enlarge-window)
+(global-set-key (kbd "M-3") 'shrink-window-horizontally)
+(global-set-key (kbd "M-4") 'enlarge-window-horizontally)
