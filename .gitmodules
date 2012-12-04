@@ -52,3 +52,9 @@
 [submodule ".emacs.d/vendor/linum-off"]
 	path = .emacs.d/vendor/linum-off
 	url = git://github.com/emacsmirror/linum-off.git
+[submodule ".emacs.d/vendor/browse-kill-ring"]
+	path = .emacs.d/vendor/browse-kill-ring
+	url = git://github.com/browse-kill-ring/browse-kill-ring.git
+[submodule ".emacs.d/vendor/ace-jump-mode"]
+	path = .emacs.d/vendor/ace-jump-mode
+	url = git://github.com/winterTTr/ace-jump-mode.git

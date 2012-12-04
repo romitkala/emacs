@@ -23,7 +23,7 @@ and their terminal equivalents.")
 (setq kill-whole-line t) ; make kill-line include the ending newline char
 (global-set-key (kbd "M-9") 'kill-whole-line)
 (setq make-backup-files nil)
-(show-paren-mode 1)
+(show-paren-mode t)
 
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -202,3 +202,17 @@ and their terminal equivalents.")
 (autoload 'ack "full-ack" nil t)
 (autoload 'ack-find-same-file "full-ack" nil t)
 (autoload 'ack-find-file "full-ack" nil t)
+
+;; browse-kill-ring
+(require 'browse-kill-ring)
+(global-set-key "\C-cy" 'browse-kill-ring)
+
+;; ace-jump-mode
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-word-mode)
+
+;; custom-emacs-settings
+
+;; "y or n" instead of "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
