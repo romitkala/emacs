@@ -29,6 +29,12 @@ and their terminal equivalents.")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/elpa")
 
+(require 'package)
+(add-to-list 'package-archives
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
 ;; load vendor libs
 (let ((default-directory "~/.emacs.d/vendor/"))
       (normal-top-level-add-to-load-path '("."))
@@ -121,10 +127,6 @@ and their terminal equivalents.")
 (ido-mode 1)
 (setq ido-use-filename-at-point 'guess)
 (setq ido-create-new-buffer 'always)
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
 
 ;; Rinari
 (require 'rinari)
