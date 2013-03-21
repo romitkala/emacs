@@ -3,12 +3,12 @@
 ;;; Code:
 
 
-;;;### (autoloads (clojure-enable-slime-on-existing-buffers clojure-mode)
-;;;;;;  "clojure-mode" "clojure-mode.el" (20810 22296))
+;;;### (autoloads (clojure-mode) "clojure-mode" "clojure-mode.el"
+;;;;;;  (20810 35776))
 ;;; Generated autoloads from clojure-mode.el
 
 (autoload 'clojure-mode "clojure-mode" "\
-Major mode for editing Clojure code - similar to Lisp mode..
+Major mode for editing Clojure code - similar to Lisp mode.
 Commands:
 Delete converts tabs to spaces as it moves back.
 Blank lines separate paragraphs.  Semicolons start comments.
@@ -21,18 +21,19 @@ if that value is non-nil.
 
 \(fn)" t nil)
 
-(autoload 'clojure-enable-slime-on-existing-buffers "clojure-mode" "\
+(put 'clojure-test-ns-segment-position 'safe-local-variable 'integerp)
 
+(put 'clojure-mode-load-command 'safe-local-variable 'stringp)
 
-\(fn)" t nil)
+(add-to-list 'auto-mode-alist '("\\.clj\\'" . clojure-mode))
 
-(add-hook 'slime-connected-hook 'clojure-enable-slime-on-existing-buffers)
+(add-to-list 'interpreter-mode-alist '("jark" . clojure-mode))
 
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(add-to-list 'interpreter-mode-alist '("cake" . clojure-mode))
 
 ;;;***
 
-;;;### (autoloads nil nil ("clojure-mode-pkg.el") (20810 22296 689052))
+;;;### (autoloads nil nil ("clojure-mode-pkg.el") (20810 35776 94095))
 
 ;;;***
 
