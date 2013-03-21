@@ -58,3 +58,9 @@
 [submodule ".emacs.d/vendor/ace-jump-mode"]
 	path = .emacs.d/vendor/ace-jump-mode
 	url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule ".emacs.d/vendor/scss-mode"]
+	path = .emacs.d/vendor/scss-mode
+	url = git://github.com/antonj/scss-mode.git
+[submodule ".emacs.d/vendor/scala-mode"]
+	path = .emacs.d/vendor/scala-mode
+	url = git://github.com/haxney/scala-mode.git

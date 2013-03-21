@@ -187,6 +187,9 @@ and their terminal equivalents.")
 ;; magit
 (require 'magit)
 
+;; scala-mode
+(require 'scala-mode)
+
 ;; ruby-block
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -221,3 +224,8 @@ and their terminal equivalents.")
 (global-set-key (kbd "M-2") 'enlarge-window)
 (global-set-key (kbd "M-3") 'shrink-window-horizontally)
 (global-set-key (kbd "M-4") 'enlarge-window-horizontally)
+
+;;sass
+(setq exec-path (cons (expand-file-name "~/.gem/ruby/1.8/bin") exec-path))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))

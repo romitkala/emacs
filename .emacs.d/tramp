@@ -1,6 +1,6 @@
-;; -*- emacs-lisp -*-
+;; -*- emacs-lisp -*- <13/02/19 08:44:32 /Users/rkala/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
-((["scpc" "Main" "20Feature.jpg" nil]
+((["scpc" nil "https" nil]
   nil))
