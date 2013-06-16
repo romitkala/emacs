@@ -1,3 +1,9 @@
+(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/elpa")
+
+(load "customize")
+
 (defvar real-keyboard-keys
   '(("M-<up>"        . "\M-[1;9A")
     ("M-<down>"      . "\M-[1;9B")
@@ -25,9 +31,6 @@ and their terminal equivalents.")
 (setq make-backup-files nil)
 (show-paren-mode t)
 
-(add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/vendor")
-(add-to-list 'load-path "~/.emacs.d/elpa")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -231,3 +234,7 @@ and their terminal equivalents.")
 (setq exec-path (cons (expand-file-name "~/.gem/ruby/1.8/bin") exec-path))
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+
+;; duplicate current line
+(global-set-key (kbd "C-D") 'duplicate-current-line)
