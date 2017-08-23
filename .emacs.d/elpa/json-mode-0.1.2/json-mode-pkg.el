@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "json-mode" "0.1.2" "Major mode for editing JSON files" 'nil)
